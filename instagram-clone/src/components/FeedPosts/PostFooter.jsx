@@ -1,8 +1,8 @@
-import { Avatar, Box, Button, Flex,Input,InputGroup,InputRightElement,Text } from '@chakra-ui/react'
+import { Box, Button, Flex,Input,InputGroup,InputRightElement,Text } from '@chakra-ui/react'
 import { useState } from 'react'
-import {CommentLogo, NotificationsLogo, UnlikeLogo} from "../../assets/constants"
+import { CommentLogo, NotificationsLogo, UnlikeLogo } from "../../assets/constants"
 
-export const PostFooter = ({username}) => {
+export const PostFooter = ({username, isProfilePage}) => {
   const [liked, setLiked] = useState(false)
   const [likes, setLikes] = useState(1000)
 
@@ -19,7 +19,7 @@ export const PostFooter = ({username}) => {
   }
 
   return (
-    <Box my={10}>
+    <Box my={10} marginTop={'auto'}>
       <Flex alignItems={"center"} gap={4} w={"full"} pt={0} mb={2} mt={4}>
         <Box 
           onClick={handleLike}
@@ -34,21 +34,25 @@ export const PostFooter = ({username}) => {
         </Box>
 
       </Flex>
-
       <Text fontWeight={600} fontSize={"sm"}>
-        {likes} likes
-      </Text>
-
-      <Text fontSize={"sm"} fontWeight={700}>
-        {username}{" "}
-        <Text as="span" fontWeight={400}>
-          feels good
+          {likes} likes
         </Text>
-      </Text>
-    
-      <Text fontSize={'sm'} color={"gray"}>
-        view all comments
-      </Text>
+
+      {!isProfilePage && (
+        <>
+          <Text fontSize={"sm"} fontWeight={700}>
+            {username}{" "}
+            <Text as="span" fontWeight={400}>
+              feels good
+            </Text>
+          </Text>
+        
+          <Text fontSize={'sm'} color={"gray"}>
+            view all comments
+          </Text>
+        
+        </>
+      )}
 
       <Flex
         alignItems={"center"}

@@ -17,16 +17,13 @@ const PostHeader = ({username, avatar}) => {
 
         </Flex>
         <Box
-        cursor={"pointer"}
+          cursor={"pointer"}
         >
           <Text
             fontSize={12}
             color={"blue.500"}
             fontWeight={"bold"}
-            _hover={{
-              color:"white",
-
-            }}
+            _hover={{color:"white"}}
             transition = {"0.2s ease-in-out"}
           >
             Unfollow

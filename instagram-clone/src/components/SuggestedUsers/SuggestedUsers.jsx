@@ -17,13 +17,14 @@ export default function SuggestedUsers() {
             </Text>
         </Flex>
 
-        <SuggestedUser/>
-        <SuggestedUser/>
-        <SuggestedUser/>
+        <SuggestedUser name="Dan A" followers={1200} avatar="https://bit.ly/dan-a"/>
+        <SuggestedUser name="Ryan F" followers={345} avatar="https://bit.ly/ryan-f"/>
+        <SuggestedUser name="Christan N" followers={3900} avatar="https://bit.ly/christan-n"/>
+        
 
         <Box fontSize={12} color={"gray.500"} mt={5} alignSelf={"start"}>
 
-            2024 built by R {" "}
+            2024 built by a Programer {" "}
 
         </Box>
 
